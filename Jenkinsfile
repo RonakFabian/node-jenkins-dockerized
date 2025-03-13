@@ -2,6 +2,11 @@ pipeline {
 agent any
   
     stages {
+      stage('Init Webhook'){
+        steps {
+          checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'ca6913cc-ca3d-4778-a7a5-f525ba265635', url: 'https://github.com/RonakFabian/node-jenkins-dockerized.git']])
+        }
+      }
         stage('Checkout Code') {
             steps {
                 checkout scm
