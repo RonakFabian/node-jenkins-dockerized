@@ -12,7 +12,7 @@ agent any
   
         stage('Install and Test') {
             steps {
-                sh "echo $SUDO_PASS | sudo -S apt install npm"
+                sh 'sudo apt install npm'
                 sh 'npm test'
             }
         }
