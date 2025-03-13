@@ -16,6 +16,7 @@ agent any
         stage('Install and Test') {
             steps {
                 sh 'sudo apt install npm'
+                sh 'npm install -g sonarqube-scanner'
                 sh 'npm test'
             }
         }
