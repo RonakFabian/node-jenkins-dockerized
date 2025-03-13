@@ -1,7 +1,8 @@
 pipeline {
-    agent any
-   
-
+agent any
+   environment {
+        SUDO_PASS = credentials('sudo-password')
+    }
     stages {
         stage('Checkout Code') {
             steps {
@@ -11,7 +12,7 @@ pipeline {
   
         stage('Install and Test') {
             steps {
-                sh 'echo "pwd" | sudo -S apt install -y npm'
+                sh "echo $SUDO_PASS | sudo -S apt install npm"
                 sh 'npm test'
             }
         }
