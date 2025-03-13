@@ -11,7 +11,7 @@ pipeline {
   
         stage('Install and Test') {
             steps {
-                sh 'sudo apt install npm'
+                sh 'apt install npm'
                 sh 'npm run test'
             }
         }
@@ -24,7 +24,7 @@ pipeline {
  
         stage('Build Docker Image') {
             steps {
-               sh 'sudo docker build -t node-image:latest .'
+               sh 'docker build -t node-image:latest .'
             }
         }
     }
