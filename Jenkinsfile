@@ -23,7 +23,7 @@ agent any
  
         stage('Build Docker Image') {
             steps {
-               sh 'docker build -t node-image:latest .'
+               sh 'sudo docker build -t node-image:latest .'
             }
         }
     }
