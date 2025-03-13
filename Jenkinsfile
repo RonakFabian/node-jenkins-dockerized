@@ -1,8 +1,6 @@
 pipeline {
 agent any
-   environment {
-        SUDO_PASS = credentials('sudo-password')
-    }
+  
     stages {
         stage('Checkout Code') {
             steps {
