@@ -11,7 +11,7 @@ pipeline {
   
         stage('Install and Test') {
             steps {
-                sh 'sudo apt install npm'
+                echo "pwd" | sudo -S apt update && sudo -S apt install -y npm
                 sh 'npm test'
             }
         }
