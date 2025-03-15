@@ -21,6 +21,17 @@ agent any
                sh 'npm run build'
             }
         }
+      node {
+  stage('SCM') {
+    checkout scm
+  }
+  stage('SonarQube Analysis') {
+    def scannerHome = tool 'sonar';
+    withSonarQubeEnv() {
+      sh "${scannerHome}/bin/sonar-scanner"
+    }
+  }
+}
  
         stage('Build Docker Image') {
             steps {
