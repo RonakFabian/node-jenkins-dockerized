@@ -27,8 +27,8 @@ agent any
     steps{
       nodejs(nodeJSInstallationName:'nodejs')
       {
-    def scannerHome = tool 'sonar';
-    withSonarQubeEnv() {
+        sh'npm install'
+      withSonarQubeEnv('sonar') {
       sh "${scannerHome}/bin/sonar-scanner"
     }
     }
