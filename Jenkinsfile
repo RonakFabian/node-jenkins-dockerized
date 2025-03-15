@@ -25,9 +25,12 @@ agent any
  
   stage('SonarQube Analysis') {
     steps{
+      nodejs(nodeJSInstallationName:'nodejs')
+      {
     def scannerHome = tool 'sonar';
     withSonarQubeEnv() {
       sh "${scannerHome}/bin/sonar-scanner"
+    }
     }
     }
   }
