@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo 'Testing Stage'",
-    "build": "echo 'Building Stage'"
+    "build": "echo 'Building Stage'",
+    "sonar": "sonar-scanner"
   },
   "author": "",
   "license": "ISC",
